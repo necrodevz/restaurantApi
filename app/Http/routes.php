@@ -22,6 +22,9 @@ Route::group(['prefix'=> 'api/v1'], function(){
 	Route::post('/authenticate', 'AuthController@authenticate');
 	Route::post('/users/neworder', 'UsersController@newOrder');
 
+	Route::get('/reports/sales/{start?}/{end?}', 'AdminController@salesReport');
+
+
 	//Route::resource('/meals', 'MealsController');
 	Route::resource('/menus', 'MenusController');
 	Route::resource('/users', 'UsersController');

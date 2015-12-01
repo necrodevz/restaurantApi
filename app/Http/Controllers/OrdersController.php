@@ -17,7 +17,7 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        return Order::with('meals')->get();
+        return Order::with('meals', 'status')->get();
     }
 
     /**
