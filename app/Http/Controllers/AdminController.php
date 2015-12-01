@@ -23,18 +23,22 @@ class AdminController extends Controller
     		foreach ($order->meals as $meal) {
     			$orderCost = $orderCost + $meal->price;
     		}
-    		$order->totPrice = $orderCost;
+    		$order->totalPrice = $orderCost;
     		$array[] = $order;
     	}
 
 
-    	return compact('start', 'end');
+    	return $this->generateExcel($array);
     }
 
     private function generateExcel($array)
     {
-    	Excel::create('salesReport', function($excel){
-    		$excel->setTitle()
-    	})
+    	return Excel::create('salesReport', function($excel) use($array){
+    		$excel->setTitle('Sales Report');
+			$excel->sheet('Sales', function($sheet) use ($array) {
+				$sheet->fromArray($array);
+
+			})
+    	})->download('xlsx');
     }
 }
