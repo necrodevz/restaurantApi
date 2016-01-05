@@ -1,0 +1,8 @@
+[04-Jan-2016 02:39:22 UTC] PHP Warning:  require(/home/ubuntu/workspace/restaurantApi/bootstrap/../vendor/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/restaurantApi/bootstrap/autoload.php on line 17
+[04-Jan-2016 02:39:22 UTC] PHP Stack trace:
+[04-Jan-2016 02:39:22 UTC] PHP   1. {main}() /home/ubuntu/workspace/restaurantApi/public/index.php:0
+[04-Jan-2016 02:39:22 UTC] PHP   2. require() /home/ubuntu/workspace/restaurantApi/public/index.php:22
+[04-Jan-2016 02:39:22 UTC] PHP Fatal error:  require(): Failed opening required '/home/ubuntu/workspace/restaurantApi/bootstrap/../vendor/autoload.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/restaurantApi/bootstrap/autoload.php on line 17
+[04-Jan-2016 02:39:22 UTC] PHP Stack trace:
+[04-Jan-2016 02:39:22 UTC] PHP   1. {main}() /home/ubuntu/workspace/restaurantApi/public/index.php:0
+[04-Jan-2016 02:39:22 UTC] PHP   2. require() /home/ubuntu/workspace/restaurantApi/public/index.php:22

@@ -26,11 +26,16 @@ class UsersController extends Controller
         $date = $request->only('date');
         $user = AuthController::getAuthenticatedUser();
         try {
-            $user->orders()->create($date);
-
+            $order = $user->orders()->create($date);
+            return $order;
         } catch (Exception $e) {
             return $e;
         }
+    }
+    
+    public function currentUser()
+    {
+        return AuthController::getAuthenticatedUser();
     }
 
     public function isAdmin()
@@ -79,8 +84,7 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        $user = AuthController::getAuthenticatedUser();
-        $user->load('orders', 'orders.meals');
+        $user = User::with('orders.meals')->find($id);
         return compact('user');
     }
 
